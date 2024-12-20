@@ -1,0 +1,82 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Node.js
+node_modules/
+dist/
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build directories
+.build/
+out/
+.next/
+coverage/
+
+# Temporary files and directories
+tmp/
+temp/
+*.tmp
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+*.lock
+.idea/
+.vscode/
+*.pid
+
+# OS generated files
+.DS_Store
+*.swp
+*.swo
+Thumbs.db
+
+# Dependency directories
+bower_components/
+jspm_packages/
+
+# TypeScript
+*.tsbuildinfo
+
+# Testing
+coverage/
+.nyc_output/
+
+# Yarn and package managers
+.pnp.*
+.pnp/
+
+# Debug and profiler logs
+*.log
+
+# Local environment settings
+*.local
+
+# Ignore editor directories and files
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Ignore WSL related files
+*.wsl*
+
+# MySQL specific
+*.sql
+*.bak
+
+# Sequelize related
+.sequelize-data/
+
+# React/Next.js specific
+*.cache/
+
