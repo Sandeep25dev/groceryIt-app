@@ -1,5 +1,9 @@
+import sendEmail from "../config/sendEmail.js";
 import UserModel from "../models/user.model.js";
 import bcrypt from "bcryptjs";
+import verifyEmailTemplate from "../utils/verifyEmailTemplate.js";
+import dotenv from "dotenv";
+dotenv.config();
 
 export async function registerUserController(req, res) {
   try {
@@ -33,6 +37,24 @@ export async function registerUserController(req, res) {
 
     const newUser = new UserModel(payload);
     const save = await newUser.save();
+
+    const verifyEmailUrl = `${process.env.FRONTEND_URL}/verify-email?code=${save?._id}`;
+
+    const verifyEmail = await sendEmail({
+      sendTo: email,
+      subject: "Verification from Grocery-it",
+      html: verifyEmailTemplate({
+        name,
+        url: verifyEmailUrl,
+      }),
+    });
+
+    return res.json({
+      message: "User registered successfully",
+      error: false,
+      success: true,
+      data: save,
+    });
   } catch (error) {
     return res.status(500).json({
       message: `Error while registering user ${error.message || error}`,
