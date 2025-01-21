@@ -5,6 +5,7 @@ import morgan from "morgan";
 import helmet from "helmet";
 import dotenv from "dotenv";
 import connectToDB from "./config/connectDB.js";
+import userRouter from "./routes/user.route.js";
 dotenv.config();
 
 const app = express();
@@ -30,6 +31,8 @@ const PORT = 8080 || process.env.PORT;
 app.get("/", function (req, res) {
   res.send("Hello from the home page");
 });
+
+app.use("/api/user", userRouter);
 
 connectToDB().then(() => {
   app.listen(PORT, () => {
