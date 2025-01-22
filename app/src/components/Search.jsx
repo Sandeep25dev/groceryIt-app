@@ -15,8 +15,6 @@ const Search = () => {
     setIsSearchPage(isSearchPageActive);
   }, [location]);
 
-  console.log(isSearchPage);
-
   const redirectToSearchPage = () => {
     navigate("/search");
   };

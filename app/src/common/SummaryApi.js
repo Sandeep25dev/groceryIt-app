@@ -21,6 +21,18 @@ const SummaryApi = {
     url: "/api/user/reset-password",
     method: "put",
   },
+  refreshToken: {
+    url: "/api/user/refresh-token",
+    method: "post",
+  },
+  getUserDetails: {
+    url: "/api/user/user-details",
+    method: "get",
+  },
+  logoutUser: {
+    url: "/api/user/logout",
+    method: "get",
+  },
 };
 
 export default SummaryApi;

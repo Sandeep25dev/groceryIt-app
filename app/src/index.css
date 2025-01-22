@@ -7,5 +7,5 @@
 body {
   font-family: "Poppins", serif;
 
-  @apply bg-blue-50;
+  @apply bg-blue-50 text-neutral-700;
 }

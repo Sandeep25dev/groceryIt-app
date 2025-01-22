@@ -8,6 +8,7 @@ import {
   signUpController,
   updateUserDetails,
   uploadAvatar,
+  userDetails,
   verifyEmailController,
   verifyForgotPasswordOtp,
 } from "../controllers/userController.js";
@@ -35,5 +36,7 @@ userRouter.put("/verify-forgot-password", verifyForgotPasswordOtp);
 userRouter.put("/reset-password", resetPassword);
 
 userRouter.post("/refresh-token", refreshToken);
+
+userRouter.get("/user-details", auth, userDetails);
 
 export default userRouter;
